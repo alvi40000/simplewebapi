@@ -35,5 +35,11 @@ namespace simplewebapi.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet]
+        [Route("Today")]
+        public WeatherForecast GetTodaysForecast(){
+            return new WeatherForecast(){Date = DateTime.Today, TemperatureC = new Random().Next(-2,40), Summary = "Today's Weather"};
+        }
     }
 }
